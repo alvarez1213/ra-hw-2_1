@@ -1,0 +1,28 @@
+.toolbar {
+    padding-left: 7px;
+    margin-bottom: 25px;
+}
+
+.toolbar-btn {
+    padding: 7px 15px;
+    margin: 0 3px;
+
+    background-color: #fff;
+    border-color: #555;
+    color: #555;
+    cursor: pointer;
+
+    font-size: 15px;
+}
+
+.toolbar-btn-selected {
+    background-color: #555;
+    color: #fff;
+}
+
+.toolbar-btn:hover {
+    background-color: #555;
+    color: #fff;
+
+    transition: all 0.7s;
+}
