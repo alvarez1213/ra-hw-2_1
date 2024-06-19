@@ -10,6 +10,7 @@ export class Portfolio extends Component {
     super(props);
     this.state = {
       products: this.props.products,
+      selectedFilter: 'All',
     };
 
     this.products = this.props.products;
@@ -26,15 +27,19 @@ export class Portfolio extends Component {
         products: this.products.filter((prod) => prod.category === sortFilter),
       });
     }
+    this.setState({
+      selectedFilter: sortFilter,
+    })
   };
 
   render() {
+    // console.log(this.state.selectedFilter)
     return (
       <div className={styles["portfolio"]}>
         <Toolbar
           filters={["All", "Websites", "Flayers", "Business Cards"]}
-          selected="All"
-          onSelectFilter={this.handleSelectFilter}
+          selected={ this.state.selectedFilter }
+          onSelectFilter={ this.handleSelectFilter }
         />
 
         <ProjectList products={this.state.products} />
